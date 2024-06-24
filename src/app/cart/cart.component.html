@@ -1,0 +1,33 @@
+<!-- src/app/cart/cart.component.html -->
+<div class="title">
+  <h2 class="titillium-web-semibold">Shopping Cart</h2>
+  <button (click)="clearCart()" class="delete-button"><img src="imgs/noun-Trash-sml.png"></button>
+</div>
+<hr class="light-hr">
+
+<div *ngIf="cartItems.length; else emptyCart">
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <div *ngIf="item.amountLeftInStock === 0" class="out-of-stock-ribbon">
+        Out of Stock
+      </div>
+        <div *ngIf="item.quantity" class="quantity-indicator">{{ item.quantity }}</div>
+        <img [src]="item.photo" alt="Product Photo" class="cart-item-photo">
+        <div>
+          <h3 class="product-name titillium-web-semibold">{{ item.name }}</h3>
+          <p class="serving-size titillium-web-semibold">{{ item.servingSize }}</p>
+          <p class="price titillium-web-semibold">{{ item.price }} EGP</p>
+        </div>
+        <div class="quantity-controls">
+          <button class="titillium-web-light" [disabled]="!item.amountLeftInStock" (click)="incrementQuantity(item)">+</button>
+          <button class="titillium-web-light" [disabled]="!item.quantity" (click)="decrementQuantity(item)">-</button>
+        </div>
+    </div>
+
+</div>
+<ng-template #emptyCart>
+  <p class="titillium-web-light">Your cart is empty.</p>
+</ng-template>
+<div class="buttons">
+  <button class="cart-button titillium-web-bold" routerLink="/products">BACK</button>
+  <button class="pay-button titillium-web-bold">PAY {{totalAmount}} EGP</button>
+</div>

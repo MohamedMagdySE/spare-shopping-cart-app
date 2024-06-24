@@ -1,0 +1,81 @@
+<div class="title">
+    <h2 class="titillium-web-semibold">Menu</h2>
+    <button class="add-button titillium-web-light" (click) = "openOverlay()">+</button>
+</div>
+<hr class="light-hr">
+<div *ngIf="loading">
+    <div class="spinner">
+      <img src="">
+    </div>
+</div>
+  
+<div *ngIf="!loading">
+    <div *ngIf="products$ | async as products; else loadingProducts">
+        <div *ngFor="let product of products" class="product-card">
+          <!-- <div class="product-details"> -->
+              <div *ngIf="product.amountLeftInStock === 0" class="out-of-stock-ribbon">
+                  Out of Stock
+                </div>
+              <div *ngIf="product.quantity" class="quantity-indicator">{{ product.quantity }}</div>
+              <img (click)="openOverlay(product)" [src]="product.photo" alt="Product Photo" class="product-photo">
+              <div>
+                <h3 class="product-name titillium-web-semibold">{{ product.name }}</h3>
+                <p class="serving-size titillium-web-semibold">{{ product.servingSize }}</p>
+                <p class="price titillium-web-semibold">{{ product.price }} EGP</p>
+              </div>
+            <!-- + and - buttons -->
+            <div class="quantity-controls">
+              <button class="titillium-web-light" [disabled]="!product.amountLeftInStock" (click)="addToCart(product)">+</button>
+              <button class="titillium-web-light" [disabled]="!product.quantity" (click)="removeFromCart(product)">-</button>
+            </div>
+        </div>
+      </div>
+</div>
+
+<ng-template #loadingProducts>Loading products...</ng-template>
+
+<!-- Overlay section -->
+
+  <!-- Add/Edit overlay -->
+<div class="overlay" *ngIf="showOverlay">
+  <div class="overlay-content">
+    <div class="overlay-title">
+        <button class="close-button" (click)="closeOverlay()"><img src="imgs/noun-close-mdm.png"></button>
+        <h3>{{ editMode ? 'Edit Item' : 'Add Item' }}</h3>
+    </div>
+    <div class="white-box">
+        <form class="form" [formGroup]="editMode ? editForm : form" (submit)="editMode ? editProduct() : addNewProduct()">
+            <button type="button" class="select-file titillium-web-regular" (click)="addPhoto()">
+                <img src="imgs/noun-Plus.svg">Tap To Add Photo
+            </button>
+            <span class="label-container">
+                <label class="label titillium-web-regular" for="productName">Product Name</label>
+            </span>
+            <input class="input titillium-web-regular" type="text" id="productName" formControlName="name" required>
+            <span class="label-container">
+                <label class="label titillium-web-regular" for="productPrice">Price</label>
+            </span>
+            <input class="input titillium-web-regular" type="number" id="productPrice" formControlName="price" required>
+            <span class="label-container">
+                <label class="label titillium-web-regular" for="servingSize">Serving Size</label>
+            </span>
+            <input class="input titillium-web-regular" type="text" id="servingSize" formControlName="servingSize" required>
+            <span class="label-container">
+                <label class="label titillium-web-regular" for="inventoryLeft">Inventory Left</label>
+            </span>
+            <input class="input titillium-web-regular" type="text" id="amountLeftInStock" formControlName="amountLeftInStock" required>
+            <button class="pay-button titillium-web-bold" style="margin-top: 10%;" type="submit">
+                {{ editMode ? 'Save' : 'Add' }}
+            </button>
+        </form>
+    </div>
+  </div>
+</div>
+<footer>
+    <div class="buttons">
+        <button class="cart-button titillium-web-bold" routerLink="/cart"><img style="margin-right: 15px;" src="imgs/noun.png">{{ cart.length }}</button>
+        <button class="pay-button titillium-web-bold">PAY {{totalAmount}} EGP</button>
+    </div>
+</footer>
+
+

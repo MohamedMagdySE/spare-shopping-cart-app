@@ -1,0 +1,36 @@
+
+  [
+    {
+      "id": "1",
+      "name": "Apple",
+      "price": 80,
+      "photo": "/imgs/apple-lrg.png",
+      "servingSize": "1kg",
+      "initialStock": 10,
+      "amountLeftInStock": 10,
+      "quantity": 0
+    },
+
+    {
+      "id": "2",
+      "name": "Mango",
+      "price": 15,
+      "photo": "/imgs/mango-lrg.png",
+      "servingSize": "500g",
+      "initialStock": 15,
+      "amountLeftInStock": 15,
+      "quantity": 0
+    },
+
+    {
+     "id": "3",
+     "name": "Watermelon",
+     "price": 120,
+     "photo": "/imgs/melon-lrg.png",
+     "servingSize": "10Kg",
+     "initialStock": 5,
+     "amountLeftInStock": 5,
+     "quantity": 0
+    }
+
+  ]

@@ -1,1 +1,192 @@
-/* You can add global styles to this file, and also import other style files */
+header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+  }
+  
+  .logo img {
+    width: 100px; 
+    height: auto; 
+    margin-right: 20px; 
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  .title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-color: none;
+    right: 0;
+    h2 {
+        margin: 0;
+        color: rgba(56, 56, 56, 1);
+    }
+  }
+   .delete-button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+  .light-hr {
+    margin-top: 0px;
+    border: 1px solid rgba(112, 112, 112, 0.26);
+    margin-bottom: 20px;
+  }
+  .add-button {
+    width: 40px; 
+    height: 40px; 
+    font-size: 35px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    margin-bottom: 10px;
+  }
+  .titillium-web-extralight {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .titillium-web-light {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .titillium-web-regular {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .titillium-web-semibold {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .titillium-web-bold {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .titillium-web-black {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .titillium-web-extralight-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .titillium-web-light-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .titillium-web-regular-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .titillium-web-semibold-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .titillium-web-bold-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  .cart-button {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border: 1px solid #ccc;
+    border-radius: 26px;
+    background-color: #383838;
+    color: white;
+    width: 33%;
+    height: 52px;
+  }
+  .pay-button {
+    border: 1px solid #ccc;
+    border-radius: 26px;
+    background: linear-gradient(135deg, #00C7B8, #00A0C3); 
+    width: 62%;
+    height: 52px;
+    color: white;
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 90%;
+    bottom: 0;
+    padding: 10px;
+}
+.out-of-stock-ribbon {
+    position: relative;
+    background: linear-gradient(135deg, #00C7B8, #00A0C3);
+    color: white;
+    padding: 5px 15px; 
+    font-weight: bold; 
+    font-size: 12px; 
+    z-index: 1;
+  }
+img {
+    cursor: pointer;
+}
+.quantity-indicator {
+    width: 40px; 
+    height: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    font-weight: bolder;
+    color: #fff;
+    background: linear-gradient(135deg, #00C7B8, #00A0C3); 
+    position: absolute;
+    right: 35px;
+  }
+  .quantity-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .quantity-controls button {
+    width: 40px; 
+    height: 40px; 
+    font-size: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
+
+  .quantity-controls button:last-child {
+    border-top: 2px solid rgba(56, 56, 56, 0.2);
+  }
+  .quantity-controls button:first-child {
+    border: 0;
+    margin-bottom: 6px;
+  }
+  

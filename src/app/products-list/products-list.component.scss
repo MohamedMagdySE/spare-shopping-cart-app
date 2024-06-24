@@ -1,0 +1,150 @@
+  .product-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    height: 120px;
+    justify-content: space-between;
+    padding-right: 0px;
+  }
+  
+  .product-photo {
+    width: 148px; 
+    height: 114px; 
+    margin-right: 20px;
+   
+  }
+
+    .price {
+        color: #1CB4BC;
+        margin-top: 27px;
+        margin-bottom: 0px;
+    }
+    .serving-size {
+        font-size: 15px;
+        margin: 0;
+        font-weight: 600;
+    }
+    .product-name {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 18px;
+        margin-right: 20px;
+    }
+    
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 95%;
+    bottom: 0;
+    padding: 10px;
+    }
+  
+  .product-details {
+    position: relative;
+  }
+  .light-hr {
+    margin-top: 0px;
+    border: 1px solid rgba(112, 112, 112, 0.26);
+  }
+ 
+  .title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    right: 0;
+    h2 {
+        margin: 0;
+        color: rgba(56, 56, 56, 1);
+    }
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; 
+  }
+  
+  .overlay-content {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .overlay-title {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      margin-right: 30px;
+    }
+  }
+  .close-button {
+    position: absolute;
+    left: 20px;
+    background-color: white;
+    border: 0;
+  }
+  .select-file {
+    width: 100%;
+    height: 100px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #DBDBDB;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .label {
+    position: absolute;
+    left:22px;
+  }
+  .input {
+    border: 1px solid rgba(112, 112, 112, 0.26);
+    height: 45px;
+    background-color: #F7F7F7;
+    border-radius: 23px;
+    width: 100%;
+    margin: 20px 0px 10px 0px;
+  }
+  .white-box {
+    background-color: white;
+    width: 100%;
+  }
+  .out-of-stock-ribbon {
+    position: relative;
+    background: linear-gradient(135deg, #00C7B8, #00A0C3); 
+    color: white;
+    padding: 5px 15px; 
+    font-weight: bold; 
+    font-size: 12px;
+    z-index: 1;
+  }
+  .label-container {
+    margin: 10px;
+  }
